@@ -36,11 +36,12 @@ DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
     "environ",
+    "api",
+    "coin",
 
     "django.contrib.admin",
     "django.contrib.auth",

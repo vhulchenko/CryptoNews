@@ -1,9 +1,5 @@
 from django.urls import path, include
-
-from django.contrib import admin
-from api import urls
-
-admin.autodiscover()
+from . import views
 
 # To add a new path, first import the app:
 # import blog
@@ -14,6 +10,5 @@ admin.autodiscover()
 # Learn more here: https://docs.djangoproject.com/en/2.1/topics/http/urls/
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("api/", include("api.urls")),
+    path("list", views.list),
 ]
