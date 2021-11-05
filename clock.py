@@ -7,7 +7,6 @@ sched = BlockingScheduler()
 
 @sched.scheduled_job('interval', minutes=3)
 def timed_job():
-    jobs.countSeconds()
     print('This job is run every three minutes.')
 
 
