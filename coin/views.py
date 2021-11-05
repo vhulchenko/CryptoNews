@@ -1,7 +1,8 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from .models import Coin
+from django.db import models
 
 # Create your views here.
 
 def list(request):
-    return HttpResponse('Макс го питон учить. Волки делают ауффф!')
+    return HttpResponse(Coin.objects.all())
