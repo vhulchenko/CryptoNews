@@ -10,6 +10,7 @@ from coin.models import Coin
 from requests import Session
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
 import json
+from main import settings
 
 
 sched = BlockingScheduler()
