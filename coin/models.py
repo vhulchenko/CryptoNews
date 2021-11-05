@@ -8,8 +8,6 @@ class Coin(models.Model):
     medium = models.URLField()
 
     def createOrUpdate(params):
-        Coin.objects.all().delete()
-        return
         oldCoin = Coin.objects.all().filter(coin_id=params['id'])
         if oldCoin.count()==0:
             coin = Coin(coin_id=params['id'], name=params['name'], symbol=params['symbol'])
