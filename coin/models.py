@@ -12,6 +12,10 @@ class Coin(models.Model):
         if oldCoin.count()==0:
             coin = Coin(coin_id=params['id'], name=params['name'], symbol=params['symbol'])
             coin.save()
-        else:
-            print('Need updates')
-            print(oldCoin[0].name)
+
+
+    def update(coin, params):
+        if params['urls']['twitter']:
+            print(params['urls']['twitter'][0])
+            coin.twitter = params['urls']['twitter'][0]
+        coin.save()

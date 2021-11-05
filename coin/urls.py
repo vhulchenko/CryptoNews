@@ -1,6 +1,7 @@
 from django.urls import path, include
 from rest_framework import routers
 from . import views
+from . import jobs
 
 # To add a new path, first import the app:
 # import blog
@@ -16,3 +17,5 @@ router.register(r'list', views.CoinViewSet)
 urlpatterns = [
     path('', include(router.urls)),
 ]
+
+#jobs.getCoinInfo()

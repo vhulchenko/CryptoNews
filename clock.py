@@ -12,11 +12,12 @@ from coin import jobs
 sched = BlockingScheduler()
 
 
-@sched.scheduled_job('interval', minutes=30, jitter=130)
+@sched.scheduled_job('interval', minutes=30, jitter=30)
 def timed_job():
-    print('This job is run every three minutes.')
+    print('This job is run every 30 minutes.')
 
     jobs.getCoins()
+    jobs.getCoinInfo()
 
 
 @sched.scheduled_job('cron', day_of_week='mon-fri', hour=17)
