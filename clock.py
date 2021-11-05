@@ -1,9 +1,11 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
+from coin import jobs
 
 sched = BlockingScheduler()
 
 @sched.scheduled_job('interval', minutes=3)
 def timed_job():
+    jobs.countSeconds()
     print('This job is run every three minutes.')
 
 @sched.scheduled_job('cron', day_of_week='mon-fri', hour=17)
