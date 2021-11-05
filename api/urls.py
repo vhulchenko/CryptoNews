@@ -10,5 +10,5 @@ from coin import urls
 # Learn more here: https://docs.djangoproject.com/en/2.1/topics/http/urls/
 
 urlpatterns = [
-    path("coin/", include("coin.urls")),
+    path("v1/coin/", include("coin.urls")),
 ]

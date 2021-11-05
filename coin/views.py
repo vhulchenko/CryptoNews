@@ -1,8 +1,9 @@
-from django.http import HttpResponse
+from django.contrib.auth.models import User, Group
+from rest_framework import viewsets
+from .serializers import CoinSerializer
 from .models import Coin
-from django.db import models
 
-# Create your views here.
 
-def list(request):
-    return HttpResponse(Coin.objects.all())
+class CoinViewSet(viewsets.ModelViewSet):
+    queryset = Coin.objects.all()
+    serializer_class = CoinSerializer

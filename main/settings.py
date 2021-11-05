@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "environ",
     "api",
     "coin",
+    "rest_framework",
 
     "django.contrib.admin",
     "django.contrib.auth",
