@@ -12,7 +12,6 @@ class Coin(models.Model):
         if oldCoin.count()==0:
             coin = Coin(coin_id=params['id'], name=params['name'], symbol=params['symbol'])
             coin.save()
-            print(coin.name)
         else:
             print('Need updates')
             print(oldCoin[0].name)

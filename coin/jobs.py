@@ -1,16 +1,10 @@
-import threading
 from .models import Coin
-from main import settings
-from requests import Request, Session
+from requests import Session
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
 import json
 
-def countSeconds():
-    print('Started')
-    getCoins()
 
 def getCoins():
-    threading.Timer(300, countSeconds).start()
     url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
     parameters = {
         'start': '1',
@@ -19,7 +13,7 @@ def getCoins():
     }
     headers = {
         'Accepts': 'application/json',
-        'X-CMC_PRO_API_KEY': settings.env('COIN_MARKET_KEY'),
+        'X-CMC_PRO_API_KEY': '0cfff5bf-0a32-4c50-87cd-ed9cc565653c',
     }
 
     session = Session()
@@ -30,6 +24,7 @@ def getCoins():
         data = json.loads(response.text)
         for item in data['data']:
             Coin.createOrUpdate(item)
+        print(data)
 
     except (ConnectionError, Timeout, TooManyRedirects) as e:
         print(e)
