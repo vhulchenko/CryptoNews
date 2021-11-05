@@ -10,7 +10,6 @@ from coin.models import Coin
 from requests import Session
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
 import json
-from main import settings
 
 
 sched = BlockingScheduler()
@@ -28,7 +27,7 @@ def timed_job():
     }
     headers = {
         'Accepts': 'application/json',
-        'X-CMC_PRO_API_KEY': settings.env('COIN_MARKET_KEY'),
+        'X-CMC_PRO_API_KEY': '0cfff5bf-0a32-4c50-87cd-ed9cc565653c',
     }
 
     session = Session()
