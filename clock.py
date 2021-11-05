@@ -11,7 +11,7 @@ sched = BlockingScheduler()
 settings.configure()
 
 
-@sched.scheduled_job('interval', minutes=3)
+@sched.scheduled_job('interval', minutes=3, jitter=130)
 def timed_job():
     print('This job is run every three minutes.')
 
