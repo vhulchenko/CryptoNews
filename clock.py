@@ -1,5 +1,4 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
-from coin import jobs
 
 
 sched = BlockingScheduler()
