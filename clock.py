@@ -1,7 +1,8 @@
-from main import settings
+import os
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'main.settings')
 
-
-settings.configure()
+import django
+django.setup()
 
 
 from apscheduler.schedulers.blocking import BlockingScheduler
