@@ -1,14 +1,17 @@
+from main import settings
+
+
+settings.configure()
+
+
 from apscheduler.schedulers.blocking import BlockingScheduler
 from coin.models import Coin
-from main import settings
 from requests import Session
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
 import json
 
+
 sched = BlockingScheduler()
-
-
-settings.configure()
 
 
 @sched.scheduled_job('interval', minutes=3, jitter=130)
