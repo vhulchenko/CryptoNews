@@ -16,8 +16,3 @@ router.register(r'list', views.CoinViewSet)
 urlpatterns = [
     path('', include(router.urls)),
 ]
-
-import threading
-from . import jobs
-
-threading.Timer(30, jobs.countSeconds).start()
